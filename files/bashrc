@@ -50,6 +50,13 @@ check_virtualenv
 
 alias cd="venv_cd"
 
+my_workon() {
+    workon $1 2> /dev/null
+
+    cd ~/Projects/$1
+}
+alias wo="my_workon"
+
 # fix for gnome-terminal new tab not opening working dir
 #. /etc/profile.d/vte.sh
 
