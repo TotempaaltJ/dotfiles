@@ -37,6 +37,9 @@ Plug 'tmhedberg/SimpylFold'
 
 " Language-specific
 Plug 'nvie/vim-flake8'
+Plug 'kchmck/vim-coffee-script'
+Plug 'leafgarland/typescript-vim'
+Plug 'mustache/vim-mustache-handlebars'
 
 " Utility
 Plug 'pthrasher/conqueterm-vim'
