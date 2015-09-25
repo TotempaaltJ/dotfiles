@@ -182,6 +182,15 @@ vnoremap > >gv
 nnoremap <space> za
 vnoremap <space> zf
 
+" I want to learn to use relative line movements
+nnoremap <silent><leader>l :set rnu! rnu? <cr>
+
+" And I'd like to have relative line numbers only on windows I'm currently in,
+" but not when I'm in insert mode.
+autocmd InsertEnter,FocusLost,WinLeave,CmdwinLeave * silent! :set norelativenumber
+autocmd InsertLeave,FocusGained,WinEnter,CmdwinEnter * silent! :set relativenumber
+
+
 "" Plugins
 " Airline
 set laststatus=2
