@@ -41,10 +41,26 @@ Plug 'nvie/vim-flake8'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'Quramy/tsuquyomi'
 
 " Utility
 Plug 'pthrasher/conqueterm-vim'
 Plug 'vim-scripts/Gundo'
+
+
+function! BuildVimproc(info)
+    if has("win32") || has("win16")
+        !tools\\update-dll-mingw
+    elseif has("win32unix")
+        !make -f make_cygwin.mak
+    elseif has("macunix")
+        !make -f make_mac.mak
+    elseif has("unix")
+        !make
+    endif
+endfunction
+Plug 'Shougo/vimproc.vim', { 'do': function('BuildVimproc') }
+
 call plug#end()
 
 
