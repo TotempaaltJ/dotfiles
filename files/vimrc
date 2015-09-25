@@ -21,6 +21,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'rking/ag.vim'
 
 " SVC
 Plug 'airblade/vim-gitgutter'
