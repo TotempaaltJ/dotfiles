@@ -183,6 +183,7 @@ nnoremap <space> za
 vnoremap <space> zf
 
 " I want to learn to use relative line movements
+set rnu
 nnoremap <silent><leader>l :set rnu! rnu? <cr>
 
 " And I'd like to have relative line numbers only on windows I'm currently in,
