@@ -195,6 +195,7 @@ autocmd InsertLeave,FocusGained,WinEnter,CmdwinEnter * silent! :set relativenumb
 "" Plugins
 " Airline
 set laststatus=2
+let g:airline_theme="hybridline"
 " Disable fancy symbols by default.
 "let g:Powerline_symbols = 'fancy'
 
