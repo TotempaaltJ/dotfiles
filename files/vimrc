@@ -29,7 +29,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " Editing
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdcommenter'
