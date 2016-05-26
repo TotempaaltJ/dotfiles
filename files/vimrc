@@ -37,6 +37,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tmhedberg/SimpylFold'
+Plug 'neomake/neomake'
 
 " Language-specific
 Plug 'nvie/vim-flake8'
@@ -252,6 +253,10 @@ let g:ycm_key_list_previous_completion=['<Up>']
 " Sideways
 nnoremap <leader>< :SidewaysLeft<cr>
 nnoremap <leader>> :SidewaysRight<cr>
+
+" Neomake
+autocmd! BufWritePost * Neomake
+let g:neomake_open_list = 2
 
 
 "" Project-specific vimrc files
