@@ -18,8 +18,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Files
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 if executable("fzf")
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 else
@@ -27,6 +25,7 @@ else
     Plug 'FelikZ/ctrlp-py-matcher'
 endif
 Plug 'rking/ag.vim'
+Plug 'tpope/vim-vinegar'
 
 " SVC
 Plug 'airblade/vim-gitgutter'
@@ -217,9 +216,6 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
-
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
 
 " Jedi
 let g:jedi#use_tabs_not_buffers = 0
