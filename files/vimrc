@@ -43,6 +43,7 @@ Plug 'neomake/neomake'
 Plug 'nvie/vim-flake8'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
+Plug 'digitaltoad/vim-pug'
 
 
 function! BuildVimproc(info)
