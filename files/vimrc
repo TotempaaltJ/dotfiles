@@ -35,21 +35,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-unimpaired'
-Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
-Plug 'AndrewRadev/sideways.vim'
 Plug 'tmhedberg/SimpylFold'
 
 " Language-specific
 Plug 'nvie/vim-flake8'
-Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
-Plug 'mustache/vim-mustache-handlebars'
 Plug 'Quramy/tsuquyomi'
-
-" Utility
-Plug 'pthrasher/conqueterm-vim'
-Plug 'vim-scripts/Gundo'
 
 
 function! BuildVimproc(info)
