@@ -32,33 +32,21 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " Editing
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'Raimondi/delimitMate'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neomake/neomake'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
-Plug 'tmhedberg/SimpylFold'
-Plug 'neomake/neomake'
 
 " Language-specific
-Plug 'nvie/vim-flake8'
+Plug 'zchee/deoplete-jedi'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'digitaltoad/vim-pug'
 Plug 'rust-lang/rust.vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'pangloss/vim-javascript'
 
-
-function! BuildVimproc(info)
-    if has("win32") || has("win16")
-        !tools\\update-dll-mingw
-    elseif has("win32unix")
-        !make -f make_cygwin.mak
-    elseif has("macunix")
-        !make -f make_mac.mak
-    elseif has("unix")
-        !make
-    endif
-endfunction
-Plug 'Shougo/vimproc.vim', { 'do': function('BuildVimproc') }
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 call plug#end()
 
@@ -189,24 +177,33 @@ autocmd InsertLeave,FocusGained,WinEnter,CmdwinEnter * silent! :set relativenumb
 " Airline
 set laststatus=2
 let g:airline_theme="hybridline"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
 
 " GitGutter
 highlight clear SignColumn
 
-" MiniBufExpl
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 'ignorecase'
+let g:deoplete#auto_completion_start_length = 0
 
-" Jedi
-let g:jedi#use_tabs_not_buffers = 0
+inoremap <expr><C-n> deoplete#mappings#manual_complete()
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" vim-flake8
-autocmd BufWritePost *.py call Flake8()
-let g:flake8_show_in_gutter = 1
-let g:flake8_show_in_file = 1
-
+let g:deoplete#sources#jedi#show_docstring = 1
 
 if executable("fzf")
     " FZF has sane defaults
@@ -232,21 +229,12 @@ else
     endif
 endif
 
-" Gundo
-map U :GundoToggle<CR>
-
-" YCM
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-let g:ycm_key_list_previous_completion=['<Up>']
-
-" Sideways
-nnoremap <leader>< :SidewaysLeft<cr>
-nnoremap <leader>> :SidewaysRight<cr>
-
 " Neomake
 autocmd! BufWritePost * Neomake
-let g:neomake_open_list = 2
+let g:neomake_python_enabled_makers = ['flake8', 'pep8']
 
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
 
 "" Project-specific vimrc files
 set exrc

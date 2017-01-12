@@ -32,7 +32,6 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # virtualenvwrapper config
 export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source "$VIRTUALENVWRAPPER_DIR/virtualenvwrapper.sh"
 # thanks cjerdonek and justinabrahms @ https://gist.github.com/cjerdonek/7583644
 check_virtualenv() {
