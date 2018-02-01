@@ -46,6 +46,12 @@ function copy {
         sed -i -e "s/{{dotfiles}}/$(echo $DIR | sed -e 's/[\/&]/\\&/g')/g" ~/.$1
     fi
 }
+function install {
+    read -p "Do you want to run install script for ${DIR}/installs/$1 [y/N] "
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        ${DIR}/install/$1
+    fi
+}
 
 
 # Removes all installed links
@@ -76,6 +82,11 @@ function main {
     done
     for file in ${DIR}/templates/*; do
         copy $(basename $file)
+    done
+
+    # CUSTOM INSTALLATIONS
+    for file in ${DIR}/installs/*; do
+        install $(basename $file)
     done
 
     # PLUG INSTALL
