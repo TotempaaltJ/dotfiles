@@ -23,6 +23,10 @@ sense when you know exactly what's happening:
   * `screenrc`  
     Screen is amazing but it requires some minor customization to reach its
     full potential.
+  * `inputrc`
+    Since I'm madly in love with vim, I set up readline with its builtin vim
+    bindings, which aren't too bad, and definitely better than the default
+    emacs bindings.
 
 * `links/`  
   Files to be symlinked to (these are usually directories).
@@ -39,6 +43,12 @@ sense when you know exactly what's happening:
   occurrence of {{dotfiles}} replaced by the path to the dotfiles
   repository. This is so you can add any machine-specific configuration to the
   actual files.
+
+* `installs/`
+  This is where I got sick of installing new machines by hand with all the
+  different apps that need to be set up. Short and simple installation scripts
+  for a bunch of different tools any Mac(!) machine should need. Do not run on
+  servers or on Linux machines. It will break.
 
 ## How to use
 
