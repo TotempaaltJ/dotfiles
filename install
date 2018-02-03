@@ -49,7 +49,7 @@ function copy {
 function install {
     read -p "Do you want to run install script for ${DIR}/installs/$1 [y/N] "
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        ${DIR}/install/$1
+        ${DIR}/installs/$1
     fi
 }
 
