@@ -1,8 +1,9 @@
 #!/bin/bash
 set -ex
 
-curl -L -o spotify.zip "https://download.scdn.co/SpotifyInstaller.zip"
+curl -L -o /tmp/spotify.zip "https://download.scdn.co/SpotifyInstaller.zip"
+cd /tmp
 unzip spotify.zip
 open "Install Spotify.app"
 rm spotify.zip
-rm spotify.zip
+cd -
