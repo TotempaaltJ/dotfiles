@@ -1,4 +1,6 @@
 #!/bin/bash
+set -ex
+
 curl -L -o iTerm2.zip "https://iterm2.com/downloads/stable/latest"
 unzip iTerm2.zip
 mv iTerm.app /Applications

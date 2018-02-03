@@ -1,4 +1,6 @@
 #!/bin/bash
+set -ex
+
 curl -L -o alfred.dmg "https://cachefly.alfredapp.com/Alfred_3.3.2_818.dmg"
 hdiutil mount -nobrowse alfred.dmg
 cp -R "/Volumes/Alfred/Alfred 3.app" /Applications

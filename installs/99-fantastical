@@ -1,4 +1,6 @@
 #!/bin/bash
+set -ex
+
 curl -L -o Fantastical.zip "https://flexibits.com/fantastical/download"
 unzip Fantastical.zip
 mv Fantastical.app /Applications

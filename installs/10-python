@@ -1,3 +1,5 @@
 #!/bin/bash
+set -ex
+
 brew install python python3 pipenv
 brew link python
