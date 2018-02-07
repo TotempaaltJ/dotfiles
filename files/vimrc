@@ -36,6 +36,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neomake/neomake'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
+Plug 'sbdchd/neoformat'
 
 " Language-specific
 Plug 'zchee/deoplete-jedi'
