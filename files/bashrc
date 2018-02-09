@@ -36,4 +36,18 @@ ssh_mosher () {
 }
 alias ssh="ssh_mosher"
 
+# Project browsing helper functions
+find_project() {
+    WORD=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(find ~/Projects -follow -name '*'$WORD'*' -mindepth 2 -maxdepth 2 -exec basename {} ';') )
+    return 0
+}
+goto_project() {
+    cd $(find ~/Projects -follow -name $1 -mindepth 2 -maxdepth 2)
+}
+alias gp=goto_project
+alias fp=find_project
+complete -F find_project goto_project
+complete -F find_project gp
+
 export PATH="/home/martijn/.gem/ruby/2.2.0/bin:$PATH"
