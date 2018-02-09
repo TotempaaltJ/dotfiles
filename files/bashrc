@@ -51,3 +51,5 @@ complete -F find_project goto_project
 complete -F find_project gp
 
 export PATH="/home/martijn/.gem/ruby/2.2.0/bin:$PATH"
+export LANG=en_US
+export LC_ALL=en_US
