@@ -6,8 +6,8 @@ source ~/.bash/colors
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias vi='vim'
-[ -x "$(command -v nvim)" ] && alias vi='nvim'
+alias vi='vim' && export EDITOR='vim'
+[ -x "$(command -v nvim)" ] && alias vi='nvim' && export EDITOR='nvim'
 alias sudo='sudo '
 
 # Prints the last commands output for the PS1
