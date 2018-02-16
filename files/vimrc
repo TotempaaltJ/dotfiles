@@ -234,6 +234,9 @@ endif
 autocmd! BufWritePost * Neomake
 let g:neomake_python_enabled_makers = ['flake8', 'pep8']
 
+" Neoformat
+nmap <leader>f :Neoformat<CR>
+
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
 
