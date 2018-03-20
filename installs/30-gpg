@@ -1,4 +1,6 @@
 #!/bin/bash
 set -ex
 
-brew install gpg
+brew install gpg gpg-agent pinentry-mac
+echo "use-agent" >> ~/.gnupg/gpg.conf
+echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
