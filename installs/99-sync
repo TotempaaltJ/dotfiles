@@ -1,0 +1,8 @@
+#!/bin/bash
+set -ex
+
+curl -L -o sync.dmg "https://www.sync.com/download/apple/Sync.dmg"
+hdiutil mount -nobrowse sync.dmg
+cp -R "/Volumes/Sync/Sync.app" /Applications
+hdiutil unmount "/Volumes/Sync"
+rm sync.dmg
