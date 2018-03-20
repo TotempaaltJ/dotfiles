@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+gpg --list-secret-keys --keyid-format LONG
+
+echo "Please copy the key ID on the first \"sec\" line, should look like:"
+echo "sec   <encryption format>/<key ID> YYYY-MM-DD [SC] [expires: YYYY-MM-DD]"
+read -p"ID: " keyid
+
+git config --global user.signingkey $keyid
+git config --global commit.gpgsign true
+
+keybase pgp export -q $keyid | pbcopy
+echo "Copied public key to clipboard, press enter to open Github and continue..."
+read
+open https://github.com/settings/keys
