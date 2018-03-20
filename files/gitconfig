@@ -34,3 +34,6 @@
     prompt = true
 [mergetool "vimdiff"]
     cmd = "nvim -d -u ~/.vimrc \"$LOCAL\" \"$REMOTE\""
+
+[includeIf "gitdir:~/Projects/l1nda/"]
+    path = ~/Projects/l1nda/.gitconfig
