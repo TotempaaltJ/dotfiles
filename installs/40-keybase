@@ -1,0 +1,10 @@
+#!/bin/bash
+set -ex
+
+curl -L -o keybase.dmg "https://prerelease.keybase.io/Keybase.dmg"
+hdiutil mount -nobrowse Keybase.dmg
+cp -R "/Volumes/Keybase/Keybase.app" /Applications
+rm keybase.dmg
+
+keybase login
+keybase pgp gen --multi
