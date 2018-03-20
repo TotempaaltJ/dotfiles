@@ -29,8 +29,8 @@
     insteadOf = "gist:"
 
 [merge]
-  tool = vimdiff
+    tool = vimdiff
 [mergetool]
-  prompt = true
+    prompt = true
 [mergetool "vimdiff"]
-  cmd = "nvim -d -u ~/.vimrc \"$LOCAL\" \"$REMOTE\""
+    cmd = "nvim -d -u ~/.vimrc \"$LOCAL\" \"$REMOTE\""
