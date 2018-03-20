@@ -4,6 +4,7 @@ set -ex
 curl -L -o keybase.dmg "https://prerelease.keybase.io/Keybase.dmg"
 hdiutil mount -nobrowse Keybase.dmg
 cp -R "/Volumes/Keybase/Keybase.app" /Applications
+hdiutil unmount "/Volumes/Keybase"
 rm keybase.dmg
 
 keybase login
