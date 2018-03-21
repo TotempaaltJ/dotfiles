@@ -54,7 +54,7 @@ export PATH="/home/martijn/.gem/ruby/2.2.0/bin:$PATH"
 export LANG=en_US
 export LC_ALL=en_US
 
-[ -x $(command -v gpg-agent) ] && (
-    gpg-agent --daemon  &&
-    GPG_TTY=$(tty) &&
-    export GPG_TTY)
+[ -x $(command -v gpg-agent) ] && gpg-agent --daemon
+
+GPG_TTY=$(tty)
+export GPG_TTY
