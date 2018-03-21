@@ -6,3 +6,8 @@ hdiutil mount -nobrowse sync.dmg
 cp -R "/Volumes/Sync/Sync.app" /Applications
 hdiutil unmount "/Volumes/Sync"
 rm sync.dmg
+
+# Store screenshots in the Sync directory
+mkdir -p ~/Sync/Screenshots
+defaults write com.apple.screencapture location ~/Sync/Screenshots
+killall SystemUIServer
