@@ -48,6 +48,10 @@ Plug 'rust-lang/rust.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'pangloss/vim-javascript'
 
+" Writing
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 call plug#end()
