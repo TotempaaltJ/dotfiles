@@ -14,6 +14,7 @@ Plug 'tpope/vim-repeat'
 
 " Layout
 Plug 'vim-scripts/Zenburn'
+Plug 'junegunn/seoul256.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
