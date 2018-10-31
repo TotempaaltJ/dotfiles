@@ -26,6 +26,7 @@ else
 endif
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-vinegar'
+Plug 'mxw/vim-jsx'
 
 " SVC
 Plug 'airblade/vim-gitgutter'
