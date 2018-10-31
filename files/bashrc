@@ -12,8 +12,7 @@ alias sudo='sudo '
 
 # Prints the last commands output for the PS1
 STATUS='$(if [ $? = 0 ]; then printf -; else printf $?; fi)'
-export PROMPT_DIRTRIM=3
-export PS1="${C_BGB} \$(eval \"echo \${STATUS}\") ${C_N} [${C_EMW}\@ ${C_Y}\u@\h${C_N} \w${C_Y}\$(__git_ps1 \" (%s)\")${C_N}]${C_G}\$ ${C_N}"
+export PS1="${C_BGB} \$(eval \"echo \${STATUS}\") ${C_N} [${C_EMW}\A ${C_Y}\u${SSH_CLIENT+@\h}${C_N} \W${C_Y}\$(__git_ps1 \" (%s)\")${C_N}]${C_G}\$ ${C_N}"
 
 # Instant history logging for working with multiple shells and history.
 shopt -s histappend                      # append to history, don't overwrite it
