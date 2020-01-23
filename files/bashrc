@@ -38,11 +38,11 @@ alias ssh="ssh_mosher"
 # Project browsing helper functions
 find_project() {
     WORD=${COMP_WORDS[COMP_CWORD]}
-    COMPREPLY=( $(find ~/Projects -follow -iname $WORD'*' -not -name '.*' -type d -mindepth 2 -maxdepth 2 -exec basename {} ';') )
+    COMPREPLY=( $(find ~/Projects -mindepth 2 -maxdepth 2 -follow -iname $WORD'*' -not -name '.*' -type d -exec basename {} ';') )
     return 0
 }
 goto_project() {
-    cd $(find ~/Projects -follow -iname $1 -not -name '.*' -type d -mindepth 2 -maxdepth 2)
+    cd $(find ~/Projects -mindepth 2 -maxdepth 2 -follow -iname $1 -not -name '.*' -type d)
 }
 alias gp=goto_project
 alias fp=find_project
